@@ -15,7 +15,7 @@ function CountryLabel({ name, code }: CountryLabelProps) {
 
 function CountryInfo({ country }: CountryInfoProps) {
     if (!country) return <div className='hidden'></div>
-    return <div className='text-white text-left w-[340px] mb-2'>
+    return <div className='text-white text-left w-[340px]'>
         <div><b>Country:</b> {country.name}</div>
         <div><b>Capital:</b> {country.capital}</div>
         <div><b>Currency:</b> {country.currency.name}</div>
@@ -58,7 +58,7 @@ export default function App({ countries }: AppProps) {
     const [selectedCountry, setSelectCountry] = useState<Country | null>(null)
 
     return (
-        <div className='flex md:flex-row sm:flex-col-reverse gap-10 font-sans'>
+        <div className='flex md:flex-row max-sm:flex-col-reverse gap-10 font-sans'>
             <Dropdown countries={countries} selectedCountry={selectedCountry} setSelectCountry={setSelectCountry} />
             <CountryInfo country={selectedCountry} />
         </div>
